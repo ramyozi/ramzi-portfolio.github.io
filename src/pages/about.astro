@@ -1,0 +1,122 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+import ContactCTA from '../components/ContactCTA.astro';
+import Hero from '../components/Hero.astro';
+---
+
+<BaseLayout title="About | Ramzi BENMANSOUR" description="About Ramzi BENMANSOUR Lorem Ipsum">
+	<div class="stack gap-20">
+		<main class="wrapper about">
+			<Hero
+				title="About"
+				tagline="Thanks for stopping by. Read below to learn more about myself and my background."
+			>
+				<img
+					width="500"
+					height="600"
+					src="/assets/at-work.jpg"
+					alt="Ramzi BENMANSOUR at work with a colleague"
+					  style="display: block; margin: 0 auto;"
+				/>
+			</Hero>
+
+			<section>
+				<h2 class="section-title">Background</h2>
+				<div class="content">
+					<p>
+						Hello, I'm Ramzi Benmansour, and my journey into the world of software development has been a continuous quest for knowledge and growth. I have a passion for creating innovative solutions and learning new technologies. My experiences in both web and mobile development have equipped me with the skills to tackle complex challenges.
+					</p>
+				</div>
+			</section>
+			<section>
+				<h2 class="section-title">Education</h2>
+				<div class="content">
+					<p>
+						In 2019-2020, I embarked on my academic journey in Computer Science at the University of Paul Sabatier. During this year, I gained foundational knowledge in algorithmics, Python, and JavaScript.
+					</p>
+					<p>
+						In 2022, I completed the Apple Foundation Program, where I specialized in SwiftUI, UIKit, and networking for mobile app development.
+						In the same year, I achieved a TOEIC certification with a score of 885 points (level B2), demonstrating my English proficiency.
+					</p>
+					<p>
+						From 2022 to 2023, I underwent training in web and mobile development (RNCP 5 - BAC+2) at LDNR, where I worked on team projects using various programming languages and technologies, including but not limitted to: C, C++, Java, JEE , Angular and android.
+					</p><p>
+						Currently, I am pursuing advanced training in web development, focusing on Java, Spring, and Angular10 for an upcoming diploma as a Concepteur Développeur d'Application Java Fullstack at DIGINAMIC Montpellier, expected in 2023.
+					</p>
+				</div>
+			</section>
+			<section>
+				<h2 class="section-title">Skills</h2>
+				<div class="content">
+					<p> 
+						My skills encompass Java, JavaScript, and Python, with a focus on Java for robust application development.
+						I excel in Spring and Angular for creating interactive user interfaces.
+						I'm adept at HTML5, CSS3, and Bootstrap for responsive web design.
+						Git is my go-to for version control, and I efficiently manage databases with MySQL.
+					</p>
+				</div>
+			</section>
+		</main>
+
+		<ContactCTA />
+	</div>
+</BaseLayout>
+
+<style>
+	.about {
+		display: flex;
+		flex-direction: column;
+		gap: 3.5rem;
+	}
+
+	img {
+		margin-top: 1.5rem;
+		border-radius: 1.5rem;
+		box-shadow: var(--shadow-md);
+	}
+
+	section {
+		display: flex;
+		flex-direction: column;
+		gap: 0.5rem;
+		color: var(--gray-200);
+	}
+
+	.section-title {
+		grid-column-start: 1;
+		font-size: var(--text-xl);
+		color: var(--gray-0);
+	}
+
+	.content {
+		grid-column: 2 / 4;
+	}
+
+	.content :global(a) {
+		text-decoration: 1px solid underline transparent;
+		text-underline-offset: 0.25em;
+		transition: text-decoration-color var(--theme-transition);
+	}
+
+	.content :global(a:hover),
+	.content :global(a:focus) {
+		text-decoration-color: currentColor;
+	}
+
+	@media (min-width: 50em) {
+		.about {
+			display: grid;
+			grid-template-columns: 1fr 60% 1fr;
+		}
+
+		.about > :global(:first-child) {
+			grid-column-start: 2;
+		}
+
+		section {
+			display: contents;
+			font-size: var(--text-lg);
+		}
+	}
+</style>
